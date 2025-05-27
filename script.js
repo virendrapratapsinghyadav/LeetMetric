@@ -10,7 +10,7 @@
     const easyLabel = document.getElementById("easy-label");
     const mediumLabel = document.getElementById("medium-label");
     const hardLabel = document.getElementById("hard-label");
-    const cardStatsContainer = document.querySelector(".stats-cards");
+    const cardStatsContainer = document.querySelector(".stats-card");
 
      function validateUserName(username){
     if(username.trim()===""){
@@ -41,7 +41,7 @@
         console.log("Logging data: ",parsedData);
         displayUserData(parsedData);
     }
-    
+
     catch(error){
           statsContainer.innerHTML = `<p>Data not Found</p>`;
     }
@@ -70,10 +70,29 @@
         mediumProgressCircle.style.setProperty('--progress-degree', `${mediumPercent}%`);
         hardProgressCircle.style.setProperty('--progress-degree', `${hardPercent}%`);
 
-        easyLabel.innerHTML = `Easy<br>${easySolved}/${easytotal}`;
-        mediumLabel.innerHTML = `Medium<br>${mediumSolved}/${mediumtotal}`;
-        hardLabel.innerHTML = `Hard<br>${hardSolved}/${hardtotal}`;
+        easyLabel.innerHTML = `${easySolved}/${easytotal}<br>Easy`;
+        mediumLabel.innerHTML = `${mediumSolved}/${mediumtotal}<br>Medium`;
+        hardLabel.innerHTML = `${hardSolved}/${hardtotal}<br>Hard`;
+
+
+        const cardsData = [
+            {label: "Total Problems", value:userData.totalQuestions.toLocaleString()},
+            {label: "Solved Problems", value:userData.totalSolved.toLocaleString()},
+            {label: "Acceptance Rate", value:userData.acceptanceRate},
+            {label: "Leetcode Ranking", value:userData.ranking.toLocaleString()}
+        ]
+        
+        cardStatsContainer.innerHTML = cardsData.map(
+            cdata=>
+            `<div class="card">
+            <h4>${cdata.label}</h4>
+            <p>${cdata.value}</p>
+            </div>`
+        ).join("")
+
+
  }
+
 
   searchButton.addEventListener('click', function(){
     const username = usernameInput.value;
