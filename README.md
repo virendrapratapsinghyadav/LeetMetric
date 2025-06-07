@@ -16,6 +16,8 @@
 
 ## Screenshots
 
+![Before Search](assets/screenshot1.png)
+![After Search](assets/screenshot2.png)
 
 ---
 
