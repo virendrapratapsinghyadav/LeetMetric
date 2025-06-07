@@ -38,6 +38,6 @@
 2. ThorFin_1
 
 
-## 📄 License
-This project is open source under the MIT License.
+## License
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
