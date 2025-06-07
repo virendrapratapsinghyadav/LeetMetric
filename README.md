@@ -24,7 +24,7 @@
 ## Getting started
 - git clone https://github.com/virendrapratapsinghyadav/LeetMetric.git
 - cd LeetMetric
-# Just open index.html in a browser
+### Just open index.html in a browser
 
 
 ## How It Works
